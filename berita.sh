@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+#jikalau mau pakai sctipt saya jangan pakai api key nya ya
+#langsung daftar di situs news api gratis kok :)
 
 topik=("technology" "business" "science" "health" "general")
 cek=`termux-wifi-connectioninfo | jq .supplicant_state | sed 's/"//g'`
