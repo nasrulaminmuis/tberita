@@ -4,8 +4,6 @@
 #langsung daftar di situs news api gratis kok :)
 
 topik=("technology" "business" "science" "health" "general")
-cek=`termux-wifi-connectioninfo | jq .supplicant_state | sed 's/"//g'`
-hidup="COMPLETED"
 
 function tampil_berita(){
 for i in 0 1 2 3 4;
@@ -37,15 +35,4 @@ do
 done
 done
 }
-
-if [ $cek == $hidup ];
-then
-        tampil_berita;
-else
-        termux-wifi-enable true
-	sleep 20s
-	ambil=`curl $api`
-	tampil_berita;
-	sleep 30s
-	termux-wifi-enable false
-fi
+tampil_berita;
